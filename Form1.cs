@@ -40,5 +40,31 @@ namespace Ficha_2
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text == "Ativado")
+            {
+                button1.Text = "Parado";
+                timer1.Stop();
+            }
+            else if (button1.Text == "Parado")
+            {
+                button1.Text = "Ativado";
+                timer1.Start();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            contadorTempo = resetTime();
+            toolStripStatusLabelContador.Text = contadorTempo.ToLongTimeString();
+
+        }
+
+        DateTime resetTime()
+        {
+            return new DateTime(0);
+        }
     }
 }
